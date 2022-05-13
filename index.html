@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="sticky">
+                <div>
+                    <label for="title">Title:</label>
+                    <input name="title" type="text">
+                </div>
+                <div>
+                    <label for="Author">Author:</label>
+                    <input name="Author" type="text">
+                </div>
+                <div>
+                    <label for="pages">Number of pages:</label>
+                    <input name="pages" type="number" min="1">
+                </div>
+                <div>
+                    <label for="read">Read:</label>
+                    <input name="read" type="checkbox">
+                </div>
+                <button>Note down book</button>
+            </div>
+        </div>
+        <main>
+            <div class="card">
+                <p class="title">Title</p>
+                <p class="author">Author</p>
+                <hr>
+                <p>100 pages</p>
+                <button class="read">read</button>
+                
+            </div>
+        </main>
+    </div>
+</body>
+</html>

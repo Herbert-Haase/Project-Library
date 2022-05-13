@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maiden+Orange&family=Nova+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+main .card, .form .sticky button, .form .sticky input {
+  border-radius: 10px;
+  padding: 5px;
+  border: 3px solid #3730a3;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.form {
+  grid-column: 1/2;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.form .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #9333ea;
+  color: white;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 25px;
+  grid-auto-rows: 25px;
+  gap: 25px;
+}
+.form .sticky label {
+  font-family: "Courier New", Courier, monospace;
+}
+.form .sticky input {
+  background-color: white;
+}
+.form .sticky button {
+  background-color: #6366f1;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main {
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  padding: 10px;
+  gap: 10px;
+}
+main .card {
+  background-color: rgb(0, 255, 128);
+  text-align: center;
+  font-family: "Nova Mono", "Maiden Orange", "Pirata One";
+  letter-spacing: 0.2rem;
+  background-color: #e0e7ff;
+}
+main .card .title {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+main .card .author {
+  font-size: 1.2rem;
+  line-height: 5rem;
+}
+main .card button.read {
+  padding: 20px;
+}
+
+/*# sourceMappingURL=stylesheet.css.map */

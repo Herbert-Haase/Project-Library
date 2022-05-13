@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maiden+Orange&family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+
+%container-format {
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #3730a3;
+}
+$fontFamily:'Courier New', Courier, monospace;
+$fontCards: 'Nova Mono', 'Maiden Orange', 'Pirata One';
+
+html, body {
+    width: 100%;
+    height: 100%;  
+}
+.container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.form { 
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-rows: 1fr;
+
+
+    .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #9333ea;
+    color: white;
+    padding: 10px;
+
+    display: grid;
+    grid-template-rows: 25px;
+    grid-auto-rows: 25px;
+    gap: 25px;
+
+    label {
+        font-family: $fontFamily;
+    }
+    input {
+        @extend %container-format;
+        background-color: white;
+    }
+    button {
+        @extend %container-format;
+        background-color: #6366f1;
+        color: white;
+        font-family: $fontFamily;
+    }
+
+}
+}
+
+main {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+
+    padding: 10px;
+    gap: 10px;
+
+
+    .card {
+        background-color: rgb(0, 255, 128);
+        @extend %container-format;
+
+        text-align: center;
+        font-family: $fontCards;
+        letter-spacing: .2rem;
+        background-color: #e0e7ff;
+        
+
+        .title {
+            font-weight: bold;
+            font-size: 2rem;
+            line-height: 2rem;
+
+        }
+        .author {
+            font-size: 1.2rem;
+            line-height: 5rem;
+
+        }
+        button.read {
+            padding: 20px;
+        }
+    }
+}
