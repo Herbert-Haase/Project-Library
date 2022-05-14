@@ -10,6 +10,7 @@
 }
 $fontFamily:'Courier New', Courier, monospace;
 $fontCards: 'Nova Mono', 'Maiden Orange', 'Pirata One';
+$buttonWidth: 200px;
 
 html, body {
     width: 100%;
@@ -101,6 +102,8 @@ main {
             padding: 5px 60px;
             background-color: #65a30d;
             color: white;
+            width: $buttonWidth;
+
 
             &::after {
                 content: "READ";
@@ -109,9 +112,11 @@ main {
         button.unread {
             letter-spacing: .2rem;
             margin: 10px;
-            padding: 5px 60px;
+            padding: 5px 50px;
             background-color: red;
             color: white;
+            width: $buttonWidth;
+
 
             &::before {
                 content: "NOT ";
@@ -123,6 +128,8 @@ main {
             letter-spacing: .3rem;
             margin: 10px;
             padding: 5px 48px;
+            width: $buttonWidth;
+
         }
         button:hover {
             opacity: .5;

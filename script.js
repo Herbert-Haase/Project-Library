@@ -1,6 +1,5 @@
 const note_down = document.querySelector(".sticky button");
 
-// const myLibrary = [];
 
 
 note_down.addEventListener("click", () => {
@@ -8,6 +7,12 @@ note_down.addEventListener("click", () => {
         const author = document.querySelector("[name='author']");
         const pages = document.querySelector("[name='pages']");
         const read = document.querySelector("[name='read']");
+
+        const err =  " wasn't filled out";
+        if(!title.value) return alert("Title"+err);
+        if(!author.value) return alert("Author"+err);
+        if(!pages.value) return alert("The Pages amount"+err);
+
 
         function Book(title, author, pages) {
             this.title = title;
@@ -17,9 +22,8 @@ note_down.addEventListener("click", () => {
         }
 
         const bookTitle = new Book(title.value, author.value, pages.value, read.checked);
-        // bookTitle.id = (() => myLibrary.length)();
-        // myLibrary.push(bookTitle);
-
+        
+        
         (() => {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -54,11 +58,16 @@ note_down.addEventListener("click", () => {
 
         const main = document.querySelector("main");
         main.appendChild(card);
-
-
-
         
-    })()
+    })();
+
+    (() => {
+        title.value = "";
+        author.value = "";
+        pages.value = "";
+        read.checked = false;
+    })();
+
     const main = document.querySelector("main");
     const card = main.querySelector(".card:last-child");
     const readbtn = card.querySelector(".read");

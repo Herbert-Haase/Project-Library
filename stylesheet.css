@@ -83,6 +83,7 @@ main .card button.read {
   padding: 5px 60px;
   background-color: #65a30d;
   color: white;
+  width: 200px;
 }
 main .card button.read::after {
   content: "READ";
@@ -90,9 +91,10 @@ main .card button.read::after {
 main .card button.unread {
   letter-spacing: 0.2rem;
   margin: 10px;
-  padding: 5px 60px;
+  padding: 5px 50px;
   background-color: red;
   color: white;
+  width: 200px;
 }
 main .card button.unread::before {
   content: "NOT ";
@@ -103,6 +105,7 @@ main .card button.remove {
   letter-spacing: 0.3rem;
   margin: 10px;
   padding: 5px 48px;
+  width: 200px;
 }
 main .card button:hover {
   opacity: 0.5;
