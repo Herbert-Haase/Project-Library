@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="script.js" defer></script>
     <title>Library</title>
 </head>
 <body>
     <div class="container">
         <div class="form">
-            <div class="sticky">
+            <form class="sticky">
                 <div>
                     <label for="title">Title:</label>
                     <input name="title" type="text">
                 </div>
                 <div>
-                    <label for="Author">Author:</label>
-                    <input name="Author" type="text">
+                    <label for="author">Author:</label>
+                    <input name="author" type="text">
                 </div>
                 <div>
                     <label for="pages">Number of pages:</label>
@@ -28,19 +29,19 @@
                     <label for="read">Read:</label>
                     <input name="read" type="checkbox">
                 </div>
-                <button>Note down book</button>
-            </div>
+                <button type="reset">Note down book</button>
+            </form>
         </div>
         <main>
-            <div class="card">
+            <!-- <div class="card">
                 <p class="title">Title</p>
                 <p class="author">Author</p>
                 <hr>
-                <p>100 pages</p>
-                <button class="read">READ</button>
+                <p class="pages">100 pages</p>
+                <button class="unread"></button>
                 <button class="remove">REMOVE</button>
                 
-            </div>
+            </div> -->
         </main>
     </div>
 </body>
