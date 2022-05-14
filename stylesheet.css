@@ -44,8 +44,14 @@ html, body {
 }
 .form .sticky button {
   background-color: #6366f1;
-  color: white;
+  color: #f5f5f4;
   font-family: "Courier New", Courier, monospace;
+  padding-bottom: 15px 15px;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+.form .sticky button:hover {
+  background-color: #4338ca;
 }
 
 main {
@@ -73,7 +79,28 @@ main .card .author {
   line-height: 5rem;
 }
 main .card button.read {
-  padding: 20px;
+  letter-spacing: 0.3rem;
+  margin: 10px;
+  padding: 5px 60px;
+  background-color: #65a30d;
+  color: white;
+}
+main .card button.unread {
+  letter-spacing: 0.3rem;
+  margin: 10px;
+  padding: 5px 60px;
+  background-color: red;
+  color: white;
+}
+main .card button.remove {
+  color: white;
+  background-color: black;
+  letter-spacing: 0.3rem;
+  margin: 10px;
+  padding: 5px 48px;
+}
+main .card button:hover {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */

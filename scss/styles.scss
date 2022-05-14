@@ -51,8 +51,15 @@ html, body {
     button {
         @extend %container-format;
         background-color: #6366f1;
-        color: white;
+        color: #f5f5f4;
         font-family: $fontFamily;
+        padding-bottom: 15px 15px;
+        font-weight: bold;
+        font-size: 1.05rem;
+
+        &:hover {
+            background-color: #4338ca;
+        }
     }
 
 }
@@ -90,7 +97,28 @@ main {
 
         }
         button.read {
-            padding: 20px;
+            letter-spacing: .3rem;
+            margin: 10px;
+            padding: 5px 60px;
+            background-color: #65a30d;
+            color: white;
+        }
+        button.unread {
+            letter-spacing: .3rem;
+            margin: 10px;
+            padding: 5px 60px;
+            background-color: red;
+            color: white;
+        }
+        button.remove {
+            color: white;
+            background-color: black;
+            letter-spacing: .3rem;
+            margin: 10px;
+            padding: 5px 48px;
+        }
+        button:hover {
+            opacity: .5;
         }
     }
 }
