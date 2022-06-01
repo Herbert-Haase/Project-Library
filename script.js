@@ -8,20 +8,29 @@ note_down.addEventListener("click", () => {
         const pages = document.querySelector("[name='pages']");
         const read = document.querySelector("[name='read']");
 
-        const err =  " wasn't filled out";
+        const err = " wasn't filled out";
         if(!title.value) return alert("Title"+err);
         if(!author.value) return alert("Author"+err);
         if(!pages.value) return alert("The Pages amount"+err);
 
 
-        function Book(title, author, pages) {
-            this.title = title;
-            this.author = author;
-            this.pages = pages;
-            this.read = read;
-        }
+        class Book {
+            static reset() {
+                title.value = "";
+                author.value = "";
+                pages.value = "";
+                read.checked = false;
+            };
 
-        const bookTitle = new Book(title.value, author.value, pages.value, read.checked);
+        constructor(title, author, pages) {
+            this.title = title.value;
+            this.author = author.value;
+            this.pages = pages.value;
+            this.read = read.checked;
+        }
+    }
+
+        const bookTitle = new Book(title, author, pages, read);
         
         
         (() => {
@@ -61,17 +70,12 @@ note_down.addEventListener("click", () => {
         
     })();
 
-    (() => {
-        title.value = "";
-        author.value = "";
-        pages.value = "";
-        read.checked = false;
-    })();
+    Book.reset();
 
     const main = document.querySelector("main");
     const card = main.querySelector(".card:last-child");
-    const readbtn = card.querySelector(".read");
-    const remove = card.querySelector(".remove");
+    const readbtn = document.querySelector(".read");
+    const remove = document.querySelector(".remove");
 
 
 readbtn.addEventListener("click", () => {
