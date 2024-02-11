@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-card {
+  position: relative;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 200px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  overflow: hidden; /* Ensures content does not affect size */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Prevents long titles from overflowing */
+}
+
+.book-author,
+.book-pages,
+.book-read-status {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+#add-book {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  z-index: 1000; /* Ensures the button stays on top of other elements */
+}
+
+/* Add these styles to your existing CSS file */
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1001; /* Higher than the add-book button */
+  width: 80%; /* Set a maximum width for the dialog */
+  max-width: 400px; /* Ensure the dialog does not exceed a certain width */
+  margin: 0; /* Remove automatic margins */
+}
+
+dialog label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+dialog input[type="text"],
+dialog input[type="number"],
+dialog select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+dialog menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+dialog button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+dialog button[value="cancel"] {
+  background-color: #ccc;
+  color: black;
+}
+
+dialog button[value="submit"] {
+  background-color: #007bff;
+  color: white;
+}
