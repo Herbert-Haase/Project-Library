@@ -2,18 +2,20 @@
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 
-Book.prototype.info = function () {
-  console.log(
-    `${this.title} by ${this.author}, ${this.pages} pages ${this.read}`
-  );
-};
+  info() {
+    console.log(
+      `${this.title} by ${this.author}, ${this.pages} pages ${this.read}`
+    );
+  }
+}
 
 function addBookToLibrary() {
   for (let book of myLibrary) {
@@ -42,7 +44,7 @@ function addBookToLibrary() {
     lib.book_read.className = "book-read-status";
     lib.book_read.textContent = book.read;
 
-    for (card in lib) {
+    for (let card in lib) {
       book_card.appendChild(lib[card]);
     }
     return book_card;
