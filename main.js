@@ -56,7 +56,6 @@ function askUserForBookInfo() {
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
   let read = document.querySelector("#read-status").value;
-  console.log(title, author, pages, read);
 
   return new Book(title, author, pages, read);
 }
@@ -65,14 +64,38 @@ document.querySelector("#add-book").addEventListener("click", function () {
   document.querySelector("#book-dialog").showModal();
 });
 
+const inputRequired = document.querySelectorAll("input[required]");
+inputRequired.forEach((inputField) => {
+  inputField.addEventListener("input", validateHTML);
+});
+
+function validateHTML() {
+  const allInputsValid = Array.from(inputRequired).every((input) =>
+    input.checkValidity()
+  );
+  console.log(allInputsValid);
+  if (allInputsValid) {
+    letUserSubmitBook();
+    document.querySelector("#submit-dialog").classList.remove("disabled");
+  }
+}
+
+function letUserSubmitBook() {
+  const submit_dialog = document.querySelector("#submit-dialog");
+  submit_dialog.removeEventListener("click", confirmSelection, { once: true });
+  submit_dialog.addEventListener("click", confirmSelection, { once: true });
+}
+
 function confirmSelection() {
   myLibrary.push(askUserForBookInfo());
   document.querySelector(".container").appendChild(addBookToLibrary());
+  resetModal();
 }
-
-document.querySelector("#submit-dialog").addEventListener("click", function () {
-  confirmSelection();
-});
+function resetModal() {
+  document.querySelector("#book-dialog").close();
+  document.querySelector("#submit-dialog").classList.add("disabled");
+  document.querySelectorAll("input").forEach((input) => (input.value = ""));
+}
 
 document
   .querySelector("button[value='cancel']")
