@@ -60,20 +60,10 @@ function askUserForBookInfo() {
   return new Book(title, author, pages, read);
 }
 
-document.querySelector("#add-book").addEventListener("click", function () {
-  document.querySelector("#book-dialog").showModal();
-});
-
-const inputRequired = document.querySelectorAll("input[required]");
-inputRequired.forEach((inputField) => {
-  inputField.addEventListener("input", validateHTML);
-});
-
 function validateHTML() {
   const allInputsValid = Array.from(inputRequired).every((input) =>
     input.checkValidity()
   );
-  console.log(allInputsValid);
   if (allInputsValid) {
     letUserSubmitBook();
     document.querySelector("#submit-dialog").classList.remove("disabled");
@@ -82,11 +72,13 @@ function validateHTML() {
 
 function letUserSubmitBook() {
   const submit_dialog = document.querySelector("#submit-dialog");
-  submit_dialog.removeEventListener("click", confirmSelection, { once: true });
-  submit_dialog.addEventListener("click", confirmSelection, { once: true });
+  submit_dialog.removeEventListener("click", AppendSelectionToDOM, {
+    once: true,
+  });
+  submit_dialog.addEventListener("click", AppendSelectionToDOM, { once: true });
 }
 
-function confirmSelection() {
+function AppendSelectionToDOM() {
   myLibrary.push(askUserForBookInfo());
   document.querySelector(".container").appendChild(addBookToLibrary());
   resetModal();
@@ -96,6 +88,16 @@ function resetModal() {
   document.querySelector("#submit-dialog").classList.add("disabled");
   document.querySelectorAll("input").forEach((input) => (input.value = ""));
 }
+
+// Events for bookform, inputValidation, and cancel of bookform
+document.querySelector("#add-book").addEventListener("click", function () {
+  document.querySelector("#book-dialog").showModal();
+});
+
+const inputRequired = document.querySelectorAll("input[required]");
+inputRequired.forEach((inputField) => {
+  inputField.addEventListener("input", validateHTML);
+});
 
 document
   .querySelector("button[value='cancel']")
