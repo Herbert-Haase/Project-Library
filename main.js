@@ -73,3 +73,9 @@ function confirmSelection() {
 document.querySelector("#submit-dialog").addEventListener("click", function () {
   confirmSelection();
 });
+
+document
+  .querySelector("button[value='cancel']")
+  .addEventListener("click", function () {
+    document.querySelector("#book-dialog").close();
+  });
